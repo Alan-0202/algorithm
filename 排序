@@ -1,1 +1,33 @@
+# @File  : quickSorted.py
+# @Author: Alan
+# @Date  :  2021/02/07
 
+
+
+def _quick_sorted(li:list) -> list :
+
+    """
+    使用递归实现了快速排序,
+    keybase 是 len(li) <= 1
+    :param li:
+    :return:
+    """
+    if len(li) <= 1:
+        return li
+
+    pivot = li[0]
+
+    left_nums = _quick_sorted([x for x in li[1:] if x < pivot])
+
+    right_nums = _quick_sorted([x for x in li[1:] if x > pivot])
+
+    return left_nums + [pivot] + right_nums
+
+
+if __name__ == "__main__":
+
+    nums = [3,6,21,9,3,2,4,6,8,9]
+
+    nums_new = _quick_sorted(nums)
+
+    print(nums_new)
