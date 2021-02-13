@@ -1,0 +1,20 @@
+# @File  : reverseString.py
+# @Author: Alan
+# @Date  :  2021/02/13
+
+
+def rever_string(s):
+    lst = []
+
+    for i in s:
+        lst.append(i)
+    result = []
+    while len(lst) != 0:
+        result.append(lst.pop())
+    return ''.join(result)
+
+
+if __name__ == "__main__":
+    s = "Hello, World"
+    s_n = rever_string(s)
+    print(s_n)
